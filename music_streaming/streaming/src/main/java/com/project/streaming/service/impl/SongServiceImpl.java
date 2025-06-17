@@ -1,6 +1,7 @@
 package com.project.streaming.service.impl;
 
 import com.project.streaming.entity.SongEntity;
+import com.project.streaming.exception.ResourceNotFound;
 import com.project.streaming.repo.SongRepository;
 import com.project.streaming.service.SongService;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,7 @@ public class SongServiceImpl implements SongService {
 
     @Override
     public SongEntity findById(Long id) {
-        return songRepository.findById(id).orElse(null);
+        return songRepository.findById(id).orElseThrow(() ->
+                new ResourceNotFound("Song not found with ID: " + id));
     }
 }
