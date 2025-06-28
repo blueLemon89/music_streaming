@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ArtistEntity {
+public class ArtistEntity extends Audit{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

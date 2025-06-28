@@ -42,4 +42,9 @@ public class SongController {
         }
         return ResponseEntity.ok(songEntity);
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<SongEntity>> searchSong(@RequestParam("keyword") String keyword) {
+        return ResponseEntity.ok(songService.searchSong(keyword));
+    }
 }

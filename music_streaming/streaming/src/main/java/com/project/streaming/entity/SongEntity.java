@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "songs")
-public class SongEntity {
+public class SongEntity extends Audit{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +25,4 @@ public class SongEntity {
     private String album;
     private Integer duration;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
 }
