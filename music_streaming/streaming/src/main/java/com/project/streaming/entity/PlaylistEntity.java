@@ -1,5 +1,6 @@
 package com.project.streaming.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,5 +26,6 @@ public class PlaylistEntity extends Audit {
             joinColumns = @JoinColumn(name = "playlist_id"),
             inverseJoinColumns = @JoinColumn(name = "song_id")
     )
+    @JsonIgnoreProperties("playlists")
     private List<SongEntity> songs;
 }
