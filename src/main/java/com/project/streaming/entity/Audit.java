@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @MappedSuperclass
 @EntityListeners(AuditListener.class)
 public class Audit {
